@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna&#129655 </title>
+  <style>
+    body {
+      background-color: lightblue;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 0.625rem;
+      height: 2rem;
+      background: red;
+      opacity: 0.8;
+    }
+
+    #innhold {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      grid-column: 1/-1;
+      justify-self: center;
+    }
+
+    #knapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    #knapper p {
+      font-size: large;
+      padding-left: 0.625rem;
+      font-weight: bold;
+    }
+
+    a button {
+      height: 6.25rem;
+      width: 100%;
+      border-radius: 10px;
+      background-color: pink;
+      border: 2px solid white;
+      color: black;
+      font-weight: bold;
+      font-size: large;
+    }
+
+    a button:hover {
+      font-size: larger;
+    }
+
+    #bilde-container {
+      display: flex;
+      justify-content: center;
+
+    }
+
+    #bilde {
+      padding-top: 3rem;
+      width: 25rem;
+      height: auto;
+    }
+
+    #dyr {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #dyr img {
+      width: 25rem;
+    }
+
+
+    #hjerte {
+      /* overlay-bildet over grid */
+      position: absolute;
+      inset: 0;
+      /* top:0; right:0; bottom:0; left:0; */
+      margin: auto;
+      width: 50rem;
+      object-fit: cover;
+      /* beholder proporsjoner */
+      z-index: 10;
+      /* høyere enn grid */
+      animation: heartbeat 5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(.75) rotate(15deg);
+      }
+
+      20% {
+        transform: scale(1) rotate(15deg);
+      }
+
+      40% {
+        transform: scale(.75) rotate(15deg);
+      }
+
+      60% {
+        transform: scale(1) rotate(15deg);
+      }
+
+      80% {
+        transform: scale(.75) rotate(15deg);
+      }
+
+      100% {
+        transform: scale(.75) rotate(15deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="confetti-container"></div>
+
+  <div id="innhold">
+
+    <h1>Gratulerer med dagen Hanna!!!!!!!!!!</h1>
+
+    <div id="knapper">
+      <p>Klikk her dersom...</p>
+      <a href="jeg.html">
+        <button>
+          Du vil vite hva jeg synes om deg &#128525
+        </button></a>
+
+      <a href="gud.html"><button>
+          Du vil vite hva Gud synes om deg &#128519
+        </button></a>
+      <a href="bilde.html">
+        <button>
+          Du vil se flere bilder &#128526
+        </button></a>
+      <a href="overraskelde.html">
+        <button>
+          Du vil ha en overraskelse &#129325
+        </button></a>
+
+
+    </div>
+
+    <div id="bilde-container">
+      <img id="bilde" src="bilder/fremside/fremside.jpeg" alt="kjæresten min :D">
+    </div>
+    <div id="dyr">
+      <img id="zebra" src="bilder/fremside/zebra.gif" alt="">
+      <img src="bilder/fremside/tiger.webp" alt="">
+    </div>
+
+
+    <img id="hjerte" src="bilder/fremside/hjerte.png" alt="">
+  </div>
+
+  <script>
+    const container = document.getElementById('confetti-container');
+
+    function createConfetti() {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+
+      // Tilfeldig startposisjon og farge
+      confetti.style.left = Math.random() * window.innerWidth + 'px';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+
+      // Legg til i container
+      container.appendChild(confetti);
+
+      // Animasjon med tilfeldig fallhastighet
+      const fallDuration = Math.random() * 3 + 2; // 2–5 sek
+      confetti.style.transition = `transform ${fallDuration}s linear`;
+
+      requestAnimationFrame(() => {
+        confetti.style.transform = `translateY(${window.innerHeight + 10}px) rotate(${Math.random() * 360}deg)`;
+      });
+
+      // Fjern konfettien når den har falt
+      setTimeout(() => {
+        confetti.remove();
+      }, fallDuration * 1000);
+    }
+
+    // Lag kontinuerlig konfetti
+    setInterval(createConfetti, 50);
+  </script>
+</body>
+
+</html>
