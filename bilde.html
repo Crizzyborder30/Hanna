@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna&#129655</title>
+  <style>
+    body{
+      background-color: lightblue;
+    }
+    * {
+      box-sizing: border-box
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 62.5rem;
+      position: relative;
+      margin: auto;
+      height: 100%;
+      background-color: pink;
+      padding: 1rem;
+      border-radius: 1%;
+      border: 2px solid white;
+    }
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+      text-align: center;
+    }
+
+    .mySlides img {
+      height: 37.5rem;
+    }
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -1.375rem;
+      padding: 1rem;
+      color: gray;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: 0.6s ease;
+      border-radius: 10%;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+    }
+    .prev{
+      left: 0;
+    }
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      transform: scale(2);
+      }
+
+    #tilbake-knapp {
+      border-radius: 10px;
+      background-color: pink;
+      border: 2px solid white;
+      color: black;
+      padding: 5px;
+      font-weight: bold;
+    }
+
+    #tilbake-knapp:hover{
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <a href="./index.html" style="position: absolute;">
+    <button id="tilbake-knapp">
+      Tilbake
+    </button>
+  </a>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides">
+      <img src="bilder/is.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/goofyhaarmeg.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/hagestue.jpg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/megburger.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/messenger.png">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/mittfbbilde.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/osslitesol.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/unge2.JPG">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/resturant.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/setlers.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/rom.jpg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/slotttet.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/ossmyesol.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/solihodet.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/nygenser.jpg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/hockey.jpg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/megdessert.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/megpakke.jpg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/megskiver.jpeg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/zipline.jpg">
+    </div>
+    <div class="mySlides fade">
+      <img src="bilder/big.jpg">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>
+</body>
+
+</html>
