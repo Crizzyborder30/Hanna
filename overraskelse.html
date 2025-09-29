@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanna&#129655</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        #videodiv {
+            text-align: center;
+            display: none;
+        }
+
+        #pressang {
+            text-align: center;
+        }
+
+        img {
+            width: 40%;
+        }
+
+        img:hover {
+            width: 42%;
+        }
+
+        #tilbake-knapp {
+            border-radius: 10px;
+            background-color: pink;
+            border: 2px solid white;
+            color: black;
+            padding: 0.3rem;
+            font-weight: bold;
+        }
+
+        #tilbake-knapp:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="./index.html" style="position: absolute;">
+        <button id="tilbake-knapp">
+            Tilbake
+        </button>
+    </a>
+
+    <div id="pressang">
+        <p style=" font-size: 40px;">
+            Skru på lyden og klikk på pressangen!
+        </p>
+        <img id="bilde" src="bilder/gave.png">
+    </div>
+
+    <div id="videodiv">
+        <video id="video" controls src="bilder/video.mp4"></video>
+    </div>
+
+    <script>
+        const bilde = document.getElementById("bilde");
+        const bildediv = document.getElementById("pressang");
+        const video = document.getElementById("video");
+        const videodiv = document.getElementById("videodiv");
+
+
+        bilde.addEventListener("click", () => {
+            // Skjul bilde-diven
+            bildediv.style.display = "none";
+
+            // Vis video-diven
+            videodiv.style.display = "block";
+
+            // Start video automatisk
+            video.play();
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
