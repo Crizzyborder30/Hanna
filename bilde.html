@@ -185,6 +185,16 @@
       
       slides[slideIndex - 1].style.display = "block";
     }
+    
+    //hele koden som gjør styring med piltastene mulig
+    document.addEventListener("keydown", (e) =>{
+      if(e.key === "ArrowRight"){
+        plusSlides(1);
+      }
+      else if(e.key === "ArrowLeft"){
+        plusSlides(-1);
+      }
+    })
   </script>
 </body>
 
