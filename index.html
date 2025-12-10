@@ -7,17 +7,21 @@
   <title>Hanna&#129655 </title>
   <style>
     body {
-      background-color: lightblue;
+      background-color: rgb(1, 122, 1);
       margin: 0;
       overflow: hidden;
+      color: white;
+      /*text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;*/
     }
 
     .confetti {
       position: absolute;
-      width: 0.625rem;
+      width: 2rem;
       height: 2rem;
-      background: red;
-      opacity: 0.8;
+     
+      /*background: red;
+      opacity: 0.8;*/
     }
 
     #innhold {
@@ -48,9 +52,9 @@
       height: 6.25rem;
       width: 100%;
       border-radius: 10px;
-      background-color: pink;
+      background-color: red;
       border: 2px solid white;
-      color: black;
+      color: white;
       font-weight: bold;
       font-size: large;
     }
@@ -71,6 +75,10 @@
       height: auto;
     }
 
+    #bilde:hover {
+      transform: scale(1.1);
+    }
+
     #dyr {
       display: flex;
       flex-direction: column;
@@ -81,55 +89,59 @@
       width: 25rem;
     }
 
-
-    #hjerte {
-      /* overlay-bildet over grid */
+    #lue {
+      display: none;
+      grid-template-columns: auto auto;
+      z-index: 1;
       position: absolute;
-      inset: 0;
-      /* top:0; right:0; bottom:0; left:0; */
-      margin: auto;
-      width: 50rem;
-      object-fit: cover;
-      /* beholder proporsjoner */
-      z-index: 10;
-      /* høyere enn grid */
-      animation: heartbeat 5s infinite;
+      border: 4px solid black;
+      gap: 5px;
+      padding: 10px;
+      background-color: antiquewhite;
+      border-radius: 15px;
     }
-
-    @keyframes heartbeat {
-      0% {
-        transform: scale(.75) rotate(15deg);
-      }
-
-      20% {
-        transform: scale(1) rotate(15deg);
-      }
-
-      40% {
-        transform: scale(.75) rotate(15deg);
-      }
-
-      60% {
-        transform: scale(1) rotate(15deg);
-      }
-
-      80% {
-        transform: scale(.75) rotate(15deg);
-      }
-
-      100% {
-        transform: scale(.75) rotate(15deg);
-      }
+    #endreTema{
+      z-index: 1;
+      position: absolute;
+      right: 0;
+      margin-right: 10px;
+      border-radius: 15px;
+      font-size: large;
+      background-color: pink;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      border: 2px solid white;
+    }
+    #endreTema:hover{
+      transform: scale(1.1);
     }
   </style>
 </head>
 
+
 <body>
+
   <div id="confetti-container"></div>
 
   <div id="innhold">
 
-    <h1>Gratulerer med dagen Hanna!!!!!!!!!!</h1>
+    <h1>God Jul Hanna &lt3</h1>
+    <p style=" font-size:large; grid-column: 1/-1;
+      justify-self: center;">Klikk på juletreet for å åpne gaven</p>
+
+    <a id="endreTema" href="bursdag.html"  >Tilbake til bursdagstema &#127881</a>
+
+    <div id="lue">
+      <img style="width: 20rem;" src="bilder/fremside/rodlue.jpg" alt="">
+      <img style="height:26rem" src="bilder/fremside/lueforklaring.png" alt="">
+      <a href=""><button id="fjernLue">Tilbake</button>
+      </a>
+      <a target="_blank" style="text-align: center; font-size: large;" href="https://www.instagram.com/turtelluer/">
+        <button>Sjekk ut luene på instagram her!</button></a>
+
+
+    </div>
 
     <div id="knapper">
       <p>Klikk her dersom...</p>
@@ -154,33 +166,33 @@
     </div>
 
     <div id="bilde-container">
-      <img id="bilde" src="bilder/fremside/fremside.jpeg" alt="kjæresten min :D">
+      <img id="bilde" src="bilder/fremside/juletre.webp" alt="kjæresten min :D">
     </div>
     <div id="dyr">
-      <img id="zebra" src="bilder/fremside/zebra.gif" alt="">
-      <img src="bilder/fremside/tiger.webp" alt="">
+      <img id="zebra" src="bilder/fremside/zebrajul.gif" alt="">
+      <img src="bilder/fremside/jultiger.jpeg" alt="">
     </div>
 
 
-    <img id="hjerte" src="bilder/fremside/hjerte.png" alt="">
   </div>
 
   <script>
     const container = document.getElementById('confetti-container');
 
     function createConfetti() {
-      const confetti = document.createElement('div');
+      const confetti = document.createElement('img');
+      confetti.src = 'bilder/snofnugg/snofnugg' + Math.floor(Math.random() * 3) + '.png';
       confetti.classList.add('confetti');
 
       // Tilfeldig startposisjon og farge
       confetti.style.left = Math.random() * window.innerWidth + 'px';
-      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      //confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
 
       // Legg til i container
       container.appendChild(confetti);
 
       // Animasjon med tilfeldig fallhastighet
-      const fallDuration = Math.random() * 3 + 2; // 2–5 sek
+      const fallDuration = Math.random() * 5 + 5; // 2–5 sek
       confetti.style.transition = `transform ${fallDuration}s linear`;
 
       requestAnimationFrame(() => {
@@ -194,7 +206,21 @@
     }
 
     // Lag kontinuerlig konfetti
-    setInterval(createConfetti, 50);
+    setInterval(createConfetti, 100);
+
+    //------------------------
+
+    const bilde = document.getElementById("bilde");
+    const lue = document.getElementById("lue");
+    bilde.addEventListener("click", () => {
+      lue.style.display = "grid";
+    });
+    const lueKnapp = document.getElementById("fjernLue");
+    lueKnapp.addEventListener("click", () => {
+      lue.style.display = "none";
+    })
+
+    
   </script>
 </body>
 
