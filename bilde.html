@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hanna&#129655</title>
   <style>
-    body{
+    body {
       background-color: lightblue;
     }
+
     * {
       box-sizing: border-box
     }
@@ -24,6 +25,7 @@
       border-radius: 1%;
       border: 2px solid white;
     }
+
     /* Hide the images by default */
     .mySlides {
       display: none;
@@ -33,6 +35,7 @@
     .mySlides img {
       height: 37.5rem;
     }
+
     /* Next & previous buttons */
     .prev,
     .next {
@@ -54,14 +57,16 @@
     .next {
       right: 0;
     }
-    .prev{
+
+    .prev {
       left: 0;
     }
+
     /* On hover, add a black background color with a little bit see-through */
     .prev:hover,
     .next:hover {
       transform: scale(2);
-      }
+    }
 
     #tilbake-knapp {
       border-radius: 10px;
@@ -72,7 +77,7 @@
       font-weight: bold;
     }
 
-    #tilbake-knapp:hover{
+    #tilbake-knapp:hover {
       transform: scale(1.1);
     }
   </style>
@@ -92,7 +97,7 @@
     </div>
     <div class="mySlides fade">
       <img src="bilder/nyeBilder/IMG_20260510_210830820 (1).jpg">
-    </div>    
+    </div>
     <div class="mySlides fade">
       <img src="bilder/nyeBilder/IMG_20260606_213952327.jpg">
     </div>
@@ -114,21 +119,21 @@
     <div class="mySlides fade">
       <img src="bilder/nyeBilder/IMG_20260806_083844642.jpg">
     </div>
-   
+
     <div class="mySlides fade">
       <img src="bilder/nyeBilder/IMG_20260908_202434243.jpg">
     </div>
     <div class="mySlides fade">
       <img src="bilder/nyeBilder/Messenger_creation_10C3D3FF-482D-4019-BA54-B1C874C10479 (1).jpeg">
     </div>
-    
+
     <div class="mySlides fade">
       <img src="bilder/nyeBilder/Messenger_creation_440119E1-A7FA-43F7-94A7-C9B44219DFDA (1).jpeg">
     </div>
     <div class="mySlides fade">
       <img src="bilder/nyeBilder/Messenger_creation_46E2C96F-9EF3-434A-A614-3B92327C1250 (1).jpeg">
     </div>
-     <div class="mySlides fade">
+    <div class="mySlides fade">
       <img src="bilder/nyeBilder/IMG_20260908_201828096_HDR.jpg">
     </div>
     <div class="mySlides fade">
@@ -140,11 +145,11 @@
     <div class="mySlides fade">
       <img src="bilder/nyeBilder/Messenger_creation_A3E4BF00-B421-4017-883B-064E62E8A616 (1).jpeg">
     </div>
-   
-      <div class="mySlides fade">
+
+    <div class="mySlides fade">
       <img src="bilder/nyeBilder/Screenshot_20261016-132018_Foto.png">
     </div>
-      <div class="mySlides fade">
+    <div class="mySlides fade">
       <img src="bilder/nyeBilder/Messenger_creation_D8AD0EDD-4BBE-43A2-BD37-2CB594FA4436 (1).jpeg">
     </div>
     <div class="mySlides fade">
@@ -153,28 +158,28 @@
     <div class="mySlides fade">
       <img src="bilder/nyeBilder/Messenger_creation_F8F62821-6752-4F22-97D6-D801795CBDBA (1).jpeg">
     </div>
-  
+
     <div class="mySlides fade">
       <img src="bilder/nyeBilder/Messenger_creation_43D849AD-616B-4BA7-8690-55F447A7C496 (1).jpeg">
     </div>
-     <div class="mySlides fade">
+    <div class="mySlides fade">
       <img src="bilder/nyeBilder/Messenger_creation_77310694-7352-4771-BD2D-96C4255D7650 (1).jpeg">
     </div>
-     <div class="mySlides fade">
+    <div class="mySlides fade">
       <img src="bilder/nyeBilder/Messenger_creation_D21DE2D8-7F7F-4C13-9C92-1B47A2EDE28D (1).jpeg">
     </div>
-      <div class="mySlides fade">
-      <img src="bilder/nyeBilder/Messenger_creation_C802C4A8-5E86-48D8-90CC-AFD8F3745390 (1).jpeg">
+    <div class="mySlides fade">
+      <img src="bilder/nyeBilder/nyttbilde.jpeg">
     </div>
-  </div>
-   
 
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
 
-  </div>
+
 
   <script>
     let slideIndex = 1;
@@ -199,16 +204,16 @@
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
-      
+
       slides[slideIndex - 1].style.display = "block";
     }
-    
+
     //hele koden som gjør styring med piltastene mulig
-    document.addEventListener("keydown", (e) =>{
-      if(e.key === "ArrowRight"){
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
         plusSlides(1);
       }
-      else if(e.key === "ArrowLeft"){
+      else if (e.key === "ArrowLeft") {
         plusSlides(-1);
       }
     })
