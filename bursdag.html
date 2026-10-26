@@ -122,21 +122,29 @@
       }
     }
 
-    #endreTema{
+     #endreTema {
       z-index: 1;
       position: absolute;
       right: 0;
       margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+
+    }
+
+    #endreTema a {
       border-radius: 15px;
       font-size: large;
-      background-color: red;
-      color: white;
+      background-color: pink;
+      color: black;
       padding: 10px;
       text-decoration: none;
       border: 2px solid white;
     }
-    #endreTema:hover{
-      transform: scale(1.1);
+
+    #endreTema a:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -148,7 +156,10 @@
 
     <h1>Gratulerer med dagen Hanna!!!!!!!!!!</h1>
 
-    <a id="endreTema" href="./index.html"  >Tilbake til juletema &#127877</a>  
+     <div id="endreTema">
+      <a href="/">Tilbake til bursdagstema (ny) &#127881</a>
+      <a href="jul.html">Tilbake til juletema &#127877</a>
+    </div>
 
     <div id="knapper">
       <p>Klikk her dersom...</p>
@@ -160,7 +171,7 @@
       <a href="gud.html"><button>
           Du vil vite hva Gud synes om deg &#128519
         </button></a>
-      <a href="bilde.html">
+      <a href="bildegammel.html">
         <button>
           Du vil se flere bilder &#128526
         </button></a>
@@ -168,8 +179,6 @@
         <button>
           Du vil ha en overraskelse &#129325
         </button></a>
-
-
     </div>
 
     <div id="bilde-container">
